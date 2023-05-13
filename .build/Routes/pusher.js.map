@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../Routes/pusher.ts"],
+  "sourcesContent": ["import { Router } from \"express\";\nconst Client = require(\"@replit/database\");\n\nexport const router = Router();\nconst db = new Client();\n\n\nrouter.post('/channel', (req, res) => {\n  const data = JSON.parse(req.body);\n  if (req.headers['X-Pusher-Key'] != process.env['PUSHER_KEY']) {\n    res.sendStatus(401);\n    return;\n  }\n\n  const event = data.events[0]\n  const channelID = event.channel;\n  if (event.name == \"channel_vacated\") {\n    db.deleteMultiple(channelID, `${channelID}:offer`)\n  }\n\n  res.sendStatus(200);\n})"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,qBAAuB;AACvB,MAAM,SAAS,QAAQ,kBAAkB;AAElC,MAAM,aAAS,uBAAO;AAC7B,MAAM,KAAK,IAAI,OAAO;AAGtB,OAAO,KAAK,YAAY,CAAC,KAAK,QAAQ;AACpC,QAAM,OAAO,KAAK,MAAM,IAAI,IAAI;AAChC,MAAI,IAAI,QAAQ,mBAAmB,QAAQ,IAAI,eAAe;AAC5D,QAAI,WAAW,GAAG;AAClB;AAAA,EACF;AAEA,QAAM,QAAQ,KAAK,OAAO;AAC1B,QAAM,YAAY,MAAM;AACxB,MAAI,MAAM,QAAQ,mBAAmB;AACnC,OAAG,eAAe,WAAW,GAAG,iBAAiB;AAAA,EACnD;AAEA,MAAI,WAAW,GAAG;AACpB,CAAC;",
+  "names": []
+}

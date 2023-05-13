@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../index.ts"],
+  "sourcesContent": ["import express from \"express\";\r\nimport { router as rooms } from \"./Routes/cominication\";\nimport {router as pusher} from \"./Routes/pusher\";\r\nimport bodyParser from \"body-parser\";\nimport cors from \"cors\";\r\nconst PORT = 9090;\r\nconst app = express();\r\n\r\napp.use(bodyParser.text());\napp.use(cors())\r\napp.use(\"/rooms\", rooms);\r\napp.use(\"/pusher\", pusher);\r\napp.listen(PORT);"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;AAAA,qBAAoB;AACpB,0BAAgC;AAChC,oBAA+B;AAC/B,yBAAuB;AACvB,kBAAiB;AACjB,MAAM,OAAO;AACb,MAAM,UAAM,eAAAA,SAAQ;AAEpB,IAAI,IAAI,mBAAAC,QAAW,KAAK,CAAC;AACzB,IAAI,QAAI,YAAAC,SAAK,CAAC;AACd,IAAI,IAAI,UAAU,oBAAAC,MAAK;AACvB,IAAI,IAAI,WAAW,cAAAC,MAAM;AACzB,IAAI,OAAO,IAAI;",
+  "names": ["express", "bodyParser", "cors", "rooms", "pusher"]
+}

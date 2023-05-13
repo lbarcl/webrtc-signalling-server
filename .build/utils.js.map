@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../utils.ts"],
+  "sourcesContent": ["export function randomIDGen(length: number): string {\r\n    const chars = \"1234567890QWERTUIOPASDFGHJKLZXCVBNMqwertyuopasdfghjklzxcvbnm\"\r\n    let str = \"\"\r\n    for (let i = 0; i < length; i++) {\r\n        str += chars[Math.floor(Math.random() * chars.length)]\r\n    }\r\n    return str;\r\n}"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAO,SAAS,YAAY,QAAwB;AAChD,QAAM,QAAQ;AACd,MAAI,MAAM;AACV,WAAS,IAAI,GAAG,IAAI,QAAQ,KAAK;AAC7B,WAAO,MAAM,KAAK,MAAM,KAAK,OAAO,IAAI,MAAM,MAAM;AAAA,EACxD;AACA,SAAO;AACX;",
+  "names": []
+}
