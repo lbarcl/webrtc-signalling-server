@@ -1,6 +1,7 @@
 # replit
 .replit
 replit.nix
+.build
 
 # Logs
 logs
